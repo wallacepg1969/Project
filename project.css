@@ -1,9 +1,12 @@
-body {
+/*basic settings*/
+html {
     background-color: white;
     color: black;
 }
-h1 {
-    color:white;
-    background-color:navy;
-    text-align: center;
+
+/*media query to hide picture button on small screens*/
+@media screen and (max-width: 575px) {
+#imageButton {
+    visibility: hidden;
+}
 }
