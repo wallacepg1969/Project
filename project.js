@@ -18,6 +18,7 @@ var corkBeo = {title: "Cork Beo (Cork Live)", href: "https://www.corkbeo.ie", im
 var radioPaperArray = [theIrishExaminer, c103, $96fm, theEveningEcho, cuhHospitalRadio, communityRadio, redfm, westCorkfm, southernStar, corkIndependent, corkMan, corkBeo];
 
 //Createfunction variables
+var formContainer = document.createElement('div');
 var imageContainer = document.createElement("div");
 var headerContainer = document.createElement("header");
 var h1 = document.createElement("h1");
@@ -115,8 +116,6 @@ function removeimagecontainer() {
   imageContainer.remove();
 }
 
-
-
 //Function to output the array to HTML using the textContainer
 function textview() {
   imagebutton();//Add image button when text links are shown
@@ -131,10 +130,12 @@ function textview() {
     para.appendChild(anchor); //Append <a> tags to <p> tags
     textContainer.appendChild(para);//Append <p> tag to textContainer div
   }
+  forminput();//Output form to html
 }
 
 //Function to output the array to HTML using images container
   function imageview() {//Function for image output
+  removeformcontainer();//Clear input form, visible in text view only
   removetextcontainer();//Clear text version before loading images
   removeimagebutton();//Clear imagebutton while images are loaded
   textbutton();//Replace image button with text button
@@ -155,12 +156,79 @@ function textview() {
     imageContainer.appendChild(image);//Embed image tags in div tag
     anchor.appendChild(imageContainer);//Embed div tags in anchor tag
     document.body.appendChild(anchor);//Embed anchor tag links in the document body
+
   }
+ }
+
+//Create a formcontainer function
+function formcontainer() {
+document.body.appendChild(formContainer);
+}
+
+//Create a function to remove the form container
+function removeformcontainer() {
+  formContainer.remove();
 }
 
 //Create a function to add a listing using HTML Form Input
 function forminput() {
-  
+  var inputform = document.createElement('form');//Create inputform tag
+  var labelname = document.createElement('label');//Create label for input
+  var nameinput = document.createElement('input');//Create nameinput tag
+  var hrefname = document.createElement('label');//Create href label tag
+  var hrefinput = document.createElement('input');//Create website input tag
+  var logoname = document.createElement('label');//Create logo label for input tag
+  var logolink = document.createElement('input');//Create logo link to image file
+  var fieldset = document.createElement('fieldset');//Create fieldset tag;
+  var legend = document.createElement('legend');//Create legend tag
+  var linebreak = document.createElement('br');//Create linebreak tag
+  var linebreak1 = document.createElement('br');//Create linebreak tag
+  var submit = document.createElement("button");//Create submit button
+  labelname.for = "nameinput";//Label for name input box
+  labelname.innerHTML = "Enter the name: ";//Label wording for name input
+  nameinput.title = "Input name of title";
+  nameinput.placeholder = "Name";
+  nameinput.name = "nameinput";//Input field name
+  nameinput.id = "nameinput";//Create input field id
+  nameinput.type = "text";//Create input field type
+  hrefname.for = "hrefinput";//Create label tag for href input box
+  hrefname.innerHTML = "Enter the full website URL: ";//Create label for href input box
+  hrefinput.title = "Website URL";
+  hrefinput.placeholder = "Website URL";
+  hrefinput.type = "url";//Create type for input href
+  hrefinput.name = "hrefinput";//Create name for input box
+  hrefinput.id = "hrefinput";//Create id for input box
+  logoname.for = "logolink";//Create label tag for input box
+  logoname.innerHTML = "Enter the link to the website logo file: ";//Create label for input box
+  logolink.name = "logolink";//Create name for input box
+  logolink.id = "logolink";//Create id for input box
+  logolink.type = "text";//Create type for input box
+  logolink.title = "Logo File";
+  logolink.placeholder = "Logo File Reference";
+  legend.innerHTML = "Add a title or station to the list using this form";
+  fieldset.style.display = "inline";
+  fieldset.style.float = "right";
+  inputform.style.float = "center";//Float the form to the center of the page
+  submit.innerHTML = "Submit";
+  submit.onclick = submit;
+  fieldset.appendChild(labelname);
+  fieldset.appendChild(nameinput);
+  fieldset.appendChild(linebreak);
+  fieldset.appendChild(hrefname);
+  fieldset.appendChild(hrefinput);
+  fieldset.appendChild(linebreak1);
+  fieldset.appendChild(logoname);
+  fieldset.appendChild(logolink);
+  fieldset.appendChild(legend);
+  fieldset.appendChild(submit);
+  inputform.appendChild(fieldset);
+  fieldset.style.backgroundColor = "beige";
+  formContainer.appendChild(inputform);
+}
+
+//Create a function to submit date from the input form
+function submit() {
+  //Create variables here from form input submissions and append variables to array to be included in output to HTML
 }
 
 //Run the basic functions to create the webpage
@@ -169,3 +237,4 @@ buttoncontainer();
 textview();
 textcontainer();
 imagecontainer();
+formcontainer();
