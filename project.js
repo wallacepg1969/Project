@@ -158,10 +158,10 @@ function textview() {
     var image = document.createElement("img");//Create an <img> element
     var imageContainer = document.createElement("div");//Create an imageContainer div element
     imageContainer.style.float = "left";//Float the logo images left
-    imageContainer.style.margin = "10px";//Create margin between images
+    imageContainer.style.margin = "5px";//Create margin between images
     imageContainer.style.borderStyle = "solid";//Create a border around images
-    imageContainer.style.borderwidth = "thick";
-    imageContainer.style.bordercolor = "blue";
+    imageContainer.style.borderWidth = "10px 10px 10px 10px";
+    imageContainer.style.borderColor = "blue";
     anchor.href = radioPaperArray[i].href; //Insert href attribute
     anchor.target = "_blank"; //Open link in new browser window
     anchor.rel = "noopener noreferrer"; //Stop the linked pages from opening new window
