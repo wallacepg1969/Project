@@ -157,7 +157,8 @@ function textview() {
     var anchor = document.createElement("a"); //Create an <a> element
     var image = document.createElement("img");//Create an <img> element
     var imageContainer = document.createElement("div");//Create an imageContainer div element
-    imageContainer.style.float = "left";//Float the logo images left
+    imageContainer.style.display = "inline-block";//Set display to inline-block
+    //imageContainer.style.float = "left";//Float the logo images left
     imageContainer.style.margin = "5px";//Create margin between images
     imageContainer.style.borderStyle = "solid";//Create a border around images
     imageContainer.style.borderWidth = "10px 10px 10px 10px";
