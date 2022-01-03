@@ -18,17 +18,36 @@ var corkBeo = {title: "Cork Beo (Cork Live)", href: "https://www.corkbeo.ie", im
 var radioPaperArray = [theIrishExaminer, c103, $96fm, theEveningEcho, cuhHospitalRadio, communityRadio, redfm, westCorkfm, southernStar, corkIndependent, corkMan, corkBeo];
 
 //Createfunction variables
+//Formcontainer variables
 var formContainer = document.createElement('div');
+//Indiviual image container variables
 var imageContainer = document.createElement("div");
+//Header container variables
 var headerContainer = document.createElement("header");
 var h1 = document.createElement("h1");
+//Button container variables
 var buttonContainer = document.createElement("div");
+//Text container variables
 var textContainer = document.createElement("div");
+//Image button variables
 var imageButton = document.createElement("button");
+//Text button variables
 var textButton = document.createElement("button");
+//Text and image container variables
 var para = document.createElement("p"); //Create a <p> element to put links on separate lines
 var anchor = document.createElement("a"); //Create an <a> element
 var image = document.createElement("img");
+//Variables for suggestion input form
+var inputform = document.createElement('form');//Create inputform tag
+var labelname = document.createElement('label');//Create label for input
+var nameinput = document.createElement('input');//Create nameinput tag
+var hrefname = document.createElement('label');//Create href label tag
+var hrefinput = document.createElement('input');//Create website input tag
+var fieldset = document.createElement('fieldset');//Create fieldset tag;
+var legend = document.createElement('legend');//Create legend tag
+var linebreak = document.createElement('br');//Create linebreak tag
+var linebreak1 = document.createElement('br');//Create linebreak tag
+var submit = document.createElement("button");//Create submit button
 
 //Group all Functions
 
@@ -48,11 +67,6 @@ function headercontainer() {
 //Function to remove headercontainer
 function removeheader() {
   headerContainer.remove();
-}
-
-//Function to create an image container
-function imagecontainer() {
-  document.body.appendChild(imageContainer);
 }
 
 //Function to create a button container div tag
@@ -170,20 +184,11 @@ function removeformcontainer() {
   formContainer.remove();
 }
 
-//Create a function to add a listing using HTML Form Input
+//Create a form input function to suggest a listing using HTML Form Input
 function forminput() {
-  var inputform = document.createElement('form');//Create inputform tag
-  var labelname = document.createElement('label');//Create label for input
-  var nameinput = document.createElement('input');//Create nameinput tag
-  var hrefname = document.createElement('label');//Create href label tag
-  var hrefinput = document.createElement('input');//Create website input tag
-  var logoname = document.createElement('label');//Create logo label for input tag
-  var logolink = document.createElement('input');//Create logo link to image file
-  var fieldset = document.createElement('fieldset');//Create fieldset tag;
-  var legend = document.createElement('legend');//Create legend tag
-  var linebreak = document.createElement('br');//Create linebreak tag
-  var linebreak1 = document.createElement('br');//Create linebreak tag
-  var submit = document.createElement("button");//Create submit button
+  inputform.action = "suggestions.html";//ust webpage to store suggestions
+  inputform.target = "_isblank";//Set target to open suggestions.html in new tab/window
+  inputform.method = "post";//Set method to post to avoid including inputted information in the suggestions.html URL
   labelname.for = "nameinput";//Label for name input box
   labelname.innerHTML = "Enter the name: ";//Label wording for name input
   nameinput.title = "Input name of title";
@@ -198,35 +203,26 @@ function forminput() {
   hrefinput.type = "url";//Create type for input href
   hrefinput.name = "hrefinput";//Create name for input box
   hrefinput.id = "hrefinput";//Create id for input box
-  logoname.for = "logolink";//Create label tag for input box
-  logoname.innerHTML = "Enter the link to the website logo file: ";//Create label for input box
-  logolink.name = "logolink";//Create name for input box
-  logolink.id = "logolink";//Create id for input box
-  logolink.type = "text";//Create type for input box
-  logolink.title = "Logo File";
-  logolink.placeholder = "Logo File Reference";
-  legend.innerHTML = "Add a title or station to the list using this form";
-  fieldset.style.display = "inline";
-  fieldset.style.float = "right";
+  legend.innerHTML = "Suggest a title or station to add to the list using this form";//Description of the form
+  fieldset.style.display = "inline";//Set display to avoid form using the full page width
+  fieldset.style.float = "right";//Set float to right to position the form
   inputform.style.float = "center";//Float the form to the center of the page
-  submit.innerHTML = "Submit";
-  submit.onclick = submit;
-  fieldset.appendChild(labelname);
-  fieldset.appendChild(nameinput);
-  fieldset.appendChild(linebreak);
-  fieldset.appendChild(hrefname);
-  fieldset.appendChild(hrefinput);
-  fieldset.appendChild(linebreak1);
-  fieldset.appendChild(logoname);
-  fieldset.appendChild(logolink);
-  fieldset.appendChild(legend);
-  fieldset.appendChild(submit);
-  inputform.appendChild(fieldset);
-  fieldset.style.backgroundColor = "beige";
-  formContainer.appendChild(inputform);
+  submit.innerHTML = "Submit";//Creat submit button
+  submit.onclick = submit;//Run function to transfer input information to suggestions.html when submit button is clicked
+  fieldset.appendChild(labelname);//Display label for name input field
+  fieldset.appendChild(nameinput);//Display name input field
+  fieldset.appendChild(linebreak);//Display linebreak
+  fieldset.appendChild(hrefname);//Display label for URL field
+  fieldset.appendChild(hrefinput);//Display URL field
+  fieldset.appendChild(linebreak1);//Display linebreak
+  fieldset.appendChild(legend);//Display legend
+  fieldset.appendChild(submit);//Display submit button
+  inputform.appendChild(fieldset);//Display fieldset heading
+  fieldset.style.backgroundColor = "beige";//Set fieldset background as beige
+  formContainer.appendChild(inputform);//Display form in form container div
 }
 
-//Create a function to submit date from the input form
+//Create a function to submit data from the input form to the website suggestions.html
 function submit() {
   //Create variables here from form input submissions and append variables to array to be included in output to HTML
 }
