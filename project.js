@@ -211,6 +211,7 @@ function forminput() {
   nameinput.name = "nameinput";//Input field name
   nameinput.id = "nameinput";//Create input field id
   nameinput.type = "text";//Create input field type
+  nameinput.required = true;//require a value
   hrefname.for = "hrefinput";//Create label tag for href input box
   hrefname.innerHTML = "Enter the full website URL: ";//Create label for href input box
   hrefinput.title = "Website URL";
@@ -237,7 +238,11 @@ function forminput() {
 
 //Create a function to submit data from the input form to the website suggestions.html
 function submit() {
-  
+  var para = document.createElement("p");
+  var name = nameinput.value;
+  var website = hrefinput.value;
+  para.innerHTML = name + website;
+  document.body.appendChild(para);
   //Create variables here from form input submissions and append variables to array to be included in output to HTML
 }
 
