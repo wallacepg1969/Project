@@ -84,7 +84,7 @@ function removebuttoncontainer() {
   buttonContainer.remove();
 }
 
-//Define button style
+//Function to define button style
 function buttonstyle(buttonName) {
   buttonName.style.margin = "5px";
   buttonName.style.backgroundColor = "yellow";
@@ -144,12 +144,12 @@ function removeimagescontainer() {
   imagesContainer.remove();
 }
 
-//Create a formcontainer function
+//Function to create a formcontainer
 function formcontainer() {
   document.body.appendChild(formContainer);
 }
 
-//Create a function to remove the form container
+//Function to remove the form container
 function removeformcontainer() {
   formContainer.remove();
 }
@@ -198,9 +198,9 @@ function textview() {
   }
  }
 
-//Create a form input function to suggest a listing using HTML Form Input
+//Function to create a form input to suggest a listing using HTML Form Input
 function forminput() {
-  inputform.action = "suggestions.html";//ust webpage to store suggestions
+  inputform.action = "suggestions.html";//Use webpage to store suggestions
   inputform.target = "_isblank";//Set target to open suggestions.html in new tab/window
   inputform.method = "post";//Set method to post to avoid including inputted information in the suggestions.html URL
   labelname.for = "nameinput";//Label for name input box
@@ -235,17 +235,13 @@ function forminput() {
   formContainer.appendChild(inputform);//Display form in form container div
 }
 
-//Create a function to submit data from the input form to the website suggestions.html
+//Function to submit data from the input form to the website suggestions.html
 function submit() {
-  var para = document.createElement("p");
-  var name = nameinput.value;
-  var website = hrefinput.value;
-  para.innerHTML = name + website;
-  document.body.appendChild(para);
+  
   //Create variables here from form input submissions and append variables to array to be included in output to HTML
 }
 
-//Create function containing footer text
+//Function containing footer text
 function footercontainer() {
   var para = document.createElement("p");
   var para1 = document.createElement("p");
@@ -269,10 +265,11 @@ function footercontainer() {
   document.body.appendChild(footerContainer);
 }
 
-//Create a function to remove footercontainer
+//Function to remove footercontainer
 function removefootercontainer() {
   footercontainer.remove();
   }
+
 
 //Run the functions and statements to create the webpage
 headercontainer();
