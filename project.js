@@ -144,6 +144,15 @@ function removeimagescontainer() {
   imagesContainer.remove();
 }
 
+//Create a formcontainer function
+function formcontainer() {
+  document.body.appendChild(formContainer);
+}
+
+//Create a function to remove the form container
+function removeformcontainer() {
+  formContainer.remove();
+}
 
 //Function to output the array to HTML using the textContainer
 function textview() {
@@ -188,16 +197,6 @@ function textview() {
     imagesContainer.appendChild(anchor);//Embed anchor tag links in container for all images
   }
  }
-
-//Create a formcontainer function
-function formcontainer() {
-document.body.appendChild(formContainer);
-}
-
-//Create a function to remove the form container
-function removeformcontainer() {
-  formContainer.remove();
-}
 
 //Create a form input function to suggest a listing using HTML Form Input
 function forminput() {
@@ -256,6 +255,7 @@ function footercontainer() {
   footerContainer.style.backgroundColor = "navy";
   footerContainer.style.color = "white";
   footerContainer.style.padding = "5px";
+  footerContainer.style.display = "block";
   para.style.textAlign = "center";
   para.innerHTML = "This website was created by Pat Wallace as a course project and is not intended for commercial use";
   footerContainer.appendChild(para);
@@ -274,7 +274,7 @@ function removefootercontainer() {
   footercontainer.remove();
   }
 
-//Run the functions to create the webpage
+//Run the functions and statements to create the webpage
 headercontainer();
 buttoncontainer();
 textview();
