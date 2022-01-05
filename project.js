@@ -80,11 +80,20 @@ function removebuttoncontainer() {
   buttonContainer.remove();
 }
 
+//Define button style
+function buttonstyle(buttonName) {
+  buttonName.style.margin = "5px";
+  buttonName.style.backgroundColor = "yellow";
+  buttonName.style.borderRadius = "7px";
+  buttonName.style.bordercolor = "purple";
+  }
+
 //Function to create a button to use Image View in a div container
 function imagebutton() {
   imageButton.innerHTML = "Click for Image View";
   buttonContainer.appendChild(imageButton);
   imageButton.id = "imageButton";
+  buttonstyle(imageButton);
   imageButton.onclick = imageview;
 }
 
@@ -97,6 +106,7 @@ function removeimagebutton() {
 function textbutton() {
   textButton.innerHTML = "Click for Text View";
   buttonContainer.appendChild(textButton);
+  buttonstyle(textButton);
   textButton.onclick = refreshpage;
 }
 
@@ -206,7 +216,6 @@ function forminput() {
   hrefinput.id = "hrefinput";//Create id for input box
   legend.innerHTML = "Suggest a title or station to add to the list using this form";//Description of the form
   fieldset.style.display = "inline";//Set display to avoid form using the full page width
-  fieldset.style.float = "right";//Set float to right to position the form
   inputform.style.float = "center";//Float the form to the center of the page
   submit.innerHTML = "Submit";//Creat submit button
   submit.onclick = submit;//Run function to transfer input information to suggestions.html when submit button is clicked
@@ -228,7 +237,7 @@ function submit() {
   //Create variables here from form input submissions and append variables to array to be included in output to HTML
 }
 
-//Run the basic functions to create the webpage
+//Run the functions to create the webpage
 headercontainer();
 buttoncontainer();
 textview();
