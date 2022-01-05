@@ -2,6 +2,7 @@
 html {
     background-color: white;
     color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /*media query to hide picture button on small screens*/

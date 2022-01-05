@@ -17,10 +17,12 @@ var corkBeo = {title: "Cork Beo (Cork Live)", href: "https://www.corkbeo.ie", im
 //Create an array using the radio station and newspaper variable objects
 var radioPaperArray = [theIrishExaminer, c103, $96fm, theEveningEcho, cuhHospitalRadio, communityRadio, redfm, westCorkfm, southernStar, corkIndependent, corkMan, corkBeo];
 
-//Createfunction variables
+//Create function variables
 //Formcontainer variables
 var formContainer = document.createElement('div');
-//Indiviual image container variables
+//Container for all images
+var imagesContainer = document.createElement('div');
+//Individual image container variables
 var imageContainer = document.createElement("div");
 //Header container variables
 var headerContainer = document.createElement("header");
@@ -48,6 +50,8 @@ var legend = document.createElement('legend');//Create legend tag
 var linebreak = document.createElement('br');//Create linebreak tag
 var linebreak1 = document.createElement('br');//Create linebreak tag
 var submit = document.createElement("button");//Create submit button
+//Variables for footer
+var footerContainer = document.createElement("div");//Create footer container
 
 //Group all Functions
 
@@ -130,20 +134,21 @@ function removetextcontainer() {
   textContainer.remove();
 }
 
-//Function to create an imageContainer
-function imagecontainer() {
-  document.body.appendChild(imageContainer);
+//Function to create an image container for all images
+function imagescontainer() {
+  document.body.appendChild(imagesContainer);
 }
 
-//Function to remove image container
-function removeimagecontainer() {
-  imageContainer.remove();
+//Function to remove images container
+function removeimagescontainer() {
+  imagesContainer.remove();
 }
+
 
 //Function to output the array to HTML using the textContainer
 function textview() {
   imagebutton();//Add image button when text links are shown
-  removeimagecontainer();//Remove images before loading text links
+  removeimagescontainer();//Remove images before loading text links
   for (var i = 0; i < radioPaperArray.length; i++) {//Cycle through each websites text links in html
     var para = document.createElement("p"); //Create a <p> element to put links on separate lines
     var anchor = document.createElement("a"); //Create an <a> element
@@ -180,8 +185,7 @@ function textview() {
     image.src = radioPaperArray[i].imageLink;//Define image src for HTML output
     imageContainer.appendChild(image);//Embed image tags in div tag
     anchor.appendChild(imageContainer);//Embed div tags in anchor tag
-    document.body.appendChild(anchor);//Embed anchor tag links in the document body
-
+    imagesContainer.appendChild(anchor);//Embed anchor tag links in container for all images
   }
  }
 
@@ -216,7 +220,6 @@ function forminput() {
   hrefinput.id = "hrefinput";//Create id for input box
   legend.innerHTML = "Suggest a title or station to add to the list using this form";//Description of the form
   fieldset.style.display = "inline";//Set display to avoid form using the full page width
-  inputform.style.float = "center";//Float the form to the center of the page
   submit.innerHTML = "Submit";//Creat submit button
   submit.onclick = submit;//Run function to transfer input information to suggestions.html when submit button is clicked
   fieldset.appendChild(labelname);//Display label for name input field
@@ -234,13 +237,43 @@ function forminput() {
 
 //Create a function to submit data from the input form to the website suggestions.html
 function submit() {
+  
   //Create variables here from form input submissions and append variables to array to be included in output to HTML
 }
+
+//Create function containing footer text
+function footercontainer() {
+  var para = document.createElement("p");
+  var para1 = document.createElement("p");
+  var anchor = document.createElement("a");  
+  //footerContainer.style.display = "flex";
+  footerContainer.style.margin = "5px";
+  footerContainer.style.backgroundColor = "navy";
+  footerContainer.style.color = "white";
+  footerContainer.style.padding = "5px";
+  para.style.textAlign = "center";
+  para.innerHTML = "This website was created by Pat Wallace as a course project and is not intended for commercial use";
+  footerContainer.appendChild(para);
+  para1.innerHTML = "View the Readme.md file for further details";
+  para1.style.textAlign = "center";
+  anchor.style.color = "white";
+  anchor.target = "_blank";
+  anchor.href = "README.md";
+  anchor.appendChild(para1);
+  footerContainer.appendChild(anchor);
+  document.body.appendChild(footerContainer);
+}
+
+//Create a function to remove footercontainer
+function removefootercontainer() {
+  footercontainer.remove();
+  }
 
 //Run the functions to create the webpage
 headercontainer();
 buttoncontainer();
 textview();
 textcontainer();
-imagecontainer();
+imagescontainer();
 formcontainer();
+footercontainer();
