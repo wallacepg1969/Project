@@ -1,6 +1,6 @@
 # Project
     
-    https://www.futureintech.ie Web Developer Programme Mentorship Project of Pat Wallace email:-wallacepg@sky.com
+    https://www.futureintech.ie Web Developer Programme Mentorship Project of Pat Wallace email:- wallacepg@sky.com
 
 Credits:
 
