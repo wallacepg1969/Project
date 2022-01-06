@@ -81,6 +81,7 @@ function removeheader() {
 
 //Function to create a button container div tag
 function buttoncontainer() {
+  buttonContainer.id = "buttonContainer";
   buttonContainer.style.textAlign = "center";
   document.body.appendChild(buttonContainer);
 }
@@ -132,6 +133,7 @@ function removetextbutton() {
 
 //Function to create text and form container
 function textformcontainer() {
+  textFormContainer.id = "textFormContainer";
   textFormContainer.style.justifyContent = "center";
   textFormContainer.style.alignItems = "center";
   textFormContainer.style.display = "flex";
@@ -152,6 +154,7 @@ function textcontainer() {
   textContainer.style.width = "300px";
   textContainer.style.display = "flex-wrap";
   textContainer.style.padding = "0px 0px 0px 10px";
+  textContainer.style.backgroundColor = "#c6ccb8";
   textFormContainer.appendChild(textContainer);
 }
 
@@ -162,6 +165,7 @@ function removetextcontainer() {
 
 //Function to create an image container for all images
 function imagescontainer() {
+  imagesContainer.id = "imagesContainer";
   imagesContainer.style.display = "flex-wrap";
   imagesContainer.style.flexDirection = "column-wrap";
   imagesContainer.style.justifyContent = "space-between";
@@ -205,7 +209,7 @@ function textview() {
   function imageview() {//Function for image output
   removeformcontainer();//Clear input form, visible in text view only
   removetextcontainer();//Clear text version before loading images
-  removeimagebutton();//Clear imagebutton while images are loaded
+  removeimagebutton();//Clear image button
   textbutton();//Replace image button with text button
   for (var i = 0; i < radioPaperArray.length; i++) {//Cycle through array to output each websites links to html
     var anchor = document.createElement("a"); //Create an <a> element
@@ -214,8 +218,8 @@ function textview() {
     imageContainer.style.display = "inline-block";//Set display to inline block
     imageContainer.style.margin = "5px";//Create margin between images
     imageContainer.style.borderStyle = "solid";//Create a border around images
-    imageContainer.style.borderWidth = "10px 10px 10px 10px";
-    imageContainer.style.borderColor = "blue";
+    imageContainer.style.borderWidth = "10px 10px 10px 10px";//Set border width
+    imageContainer.style.borderColor = "blue";//Set border colour
     anchor.href = radioPaperArray[i].href; //Insert href attribute
     anchor.target = "_blank"; //Open link in new browser window
     anchor.rel = "noopener noreferrer"; //Stop the linked pages from opening new window
@@ -260,7 +264,7 @@ function forminput() {
   fieldset.appendChild(legend);//Display legend
   fieldset.appendChild(submit);//Display submit button
   inputform.appendChild(fieldset);//Display fieldset heading
-  fieldset.style.backgroundColor = "beige";//Set fieldset background as beige
+  fieldset.style.backgroundColor = "#f5f5dc";//Set fieldset background as beige
   formContainer.appendChild(inputform);//Display form in form container div
 }
 
