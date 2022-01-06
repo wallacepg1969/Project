@@ -50,6 +50,9 @@ var legend = document.createElement('legend');//Create legend tag
 var linebreak = document.createElement('br');//Create linebreak tag
 var linebreak1 = document.createElement('br');//Create linebreak tag
 var submit = document.createElement("button");//Create submit button
+//variables for input suggestion values
+var newname = document.getElementById("nameinput");
+var website = document.getElementById("hrefinput");
 //Variables for footer
 var footerContainer = document.createElement("div");//Create footer container
 
@@ -200,9 +203,9 @@ function textview() {
 
 //Function to create a form input to suggest a listing using HTML Form Input
 function forminput() {
-  inputform.action = "suggestions.html";//Use webpage to store suggestions
-  inputform.target = "_isblank";//Set target to open suggestions.html in new tab/window
-  inputform.method = "post";//Set method to post to avoid including inputted information in the suggestions.html URL
+  inputform.action = "suggestions.txt";//Submission file
+  inputform.method = "post";//Set method to post to avoid including inputted information in the URL
+  inputform.target = "_blank";//Open action file in new tab
   labelname.for = "nameinput";//Label for name input box
   labelname.innerHTML = "Enter the name: ";//Label wording for name input
   nameinput.title = "Input name of title";
@@ -221,7 +224,6 @@ function forminput() {
   legend.innerHTML = "Suggest a title or station to add to the list using this form";//Description of the form
   fieldset.style.display = "inline";//Set display to avoid form using the full page width
   submit.innerHTML = "Submit";//Creat submit button
-  submit.onclick = submit;//Run function to transfer input information to suggestions.html when submit button is clicked
   fieldset.appendChild(labelname);//Display label for name input field
   fieldset.appendChild(nameinput);//Display name input field
   fieldset.appendChild(linebreak);//Display linebreak
@@ -235,9 +237,9 @@ function forminput() {
   formContainer.appendChild(inputform);//Display form in form container div
 }
 
-//Function to submit data from the input form to the website suggestions.html
+//Function to submit data from the input form
 function submit() {
-  
+    
   //Create variables here from form input submissions and append variables to array to be included in output to HTML
 }
 
@@ -246,11 +248,8 @@ function footercontainer() {
   var para = document.createElement("p");
   var para1 = document.createElement("p");
   var anchor = document.createElement("a");  
-  //footerContainer.style.display = "flex";
-  footerContainer.style.margin = "5px";
   footerContainer.style.backgroundColor = "navy";
   footerContainer.style.color = "white";
-  footerContainer.style.padding = "5px";
   footerContainer.style.display = "block";
   para.style.textAlign = "center";
   para.innerHTML = "This website was created by Pat Wallace as a course project and is not intended for commercial use";
