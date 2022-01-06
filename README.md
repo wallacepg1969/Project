@@ -1,13 +1,9 @@
 # Project
-Project Details
     https://www.futureintech.ie Web Developer Programme Mentorship Project of Pat Wallace email:-wallacepg@sky.com
 
-Credits and Thanks:
-    Design inspiration provided by https://www.irishexaminer.com/
-    
-    Effie Manyos of @ Product People, Project Mentor
+Credits:
 
-    Dr. Francis Adepoju, Cenit College programme tutor
+    Design inspiration provided by https://www.irishexaminer.com/
 
     Cenit College resources at https://www.studyonlinelms.com/
     
@@ -15,4 +11,10 @@ Credits and Thanks:
     
     Research and teaching resources at https://www.w3schools.com/
     
+Thanks:
+
+    Effie Manyos of @ Product People, Project Mentor
+
+    Dr. Francis Adepoju, Cenit College programme tutor
+
     Last but not least thanks to my fellow Web Developer Programme students Kathrin Welfare and Sergejs Jersovs for answering my questions and their encouragement
