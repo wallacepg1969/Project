@@ -18,6 +18,8 @@ var corkBeo = {title: "Cork Beo (Cork Live)", href: "https://www.corkbeo.ie", im
 var radioPaperArray = [theIrishExaminer, c103, $96fm, theEveningEcho, cuhHospitalRadio, communityRadio, redfm, westCorkfm, southernStar, corkIndependent, corkMan, corkBeo];
 
 //Create function variables
+//Text and form container
+var textFormContainer = document.createElement('div');
 //Formcontainer variables
 var formContainer = document.createElement('div');
 //Container for all images
@@ -61,12 +63,13 @@ var footerContainer = document.createElement("div");//Create footer container
 //Function to create a header container for the webpage
 function headercontainer() {
   "use strict";
-  h1.style.margin = "0px";
   headerContainer.style.backgroundColor = "navy";
   headerContainer.style.color = "white";
+  headerContainer.style.display = "flex-wrap";
+  headerContainer.style.width = "100%";
+  h1.style.margin = "0px";
   h1.style.textAlign = "center";
   h1.innerHTML = "Links to Cork Radio Stations and Newspapers";
-  headerContainer.display = "flex";
   document.body.appendChild(headerContainer);
   headerContainer.appendChild(h1);
 }
@@ -127,9 +130,29 @@ function removetextbutton() {
   textButton.remove();
 }
 
-//Function to create a textContainer
+//Function to create text and form container
+function textformcontainer() {
+  textFormContainer.style.justifyContent = "center";
+  textFormContainer.style.alignItems = "center";
+  textFormContainer.style.display = "flex";
+  textFormContainer.style.justifyContent = "space-around";
+  document.body.appendChild(textFormContainer);
+}
+
+//Function to remove text and container
+function removetextformcontainer() {
+  textFormContainer.remove();
+}
+
+//Function to create a textContainer to put text and form containers side by side
 function textcontainer() {
-  document.body.appendChild(textContainer);
+  textContainer.style.borderStyle ="solid";
+  textContainer.style.borderColor = "green";
+  textContainer.style.borderWidth = "2px";
+  textContainer.style.width = "300px";
+  textContainer.style.display = "flex-wrap";
+  textContainer.style.padding = "0px 0px 0px 10px";
+  textFormContainer.appendChild(textContainer);
 }
 
 //Function to remove text container
@@ -139,6 +162,9 @@ function removetextcontainer() {
 
 //Function to create an image container for all images
 function imagescontainer() {
+  imagesContainer.style.display = "flex-wrap";
+  imagesContainer.style.flexDirection = "column-wrap";
+  imagesContainer.style.justifyContent = "space-between";
   document.body.appendChild(imagesContainer);
 }
 
@@ -149,7 +175,8 @@ function removeimagescontainer() {
 
 //Function to create a formcontainer
 function formcontainer() {
-  document.body.appendChild(formContainer);
+  formContainer.style.display = "flex";
+  textFormContainer.appendChild(formContainer);
 }
 
 //Function to remove the form container
@@ -184,8 +211,7 @@ function textview() {
     var anchor = document.createElement("a"); //Create an <a> element
     var image = document.createElement("img");//Create an <img> element
     var imageContainer = document.createElement("div");//Create an imageContainer div element
-    imageContainer.style.display = "inline-block";//Set display to inline-block
-    //imageContainer.style.float = "left";//Float the logo images left
+    imageContainer.style.display = "inline-block";//Set display to inline block
     imageContainer.style.margin = "5px";//Create margin between images
     imageContainer.style.borderStyle = "solid";//Create a border around images
     imageContainer.style.borderWidth = "10px 10px 10px 10px";
@@ -193,6 +219,7 @@ function textview() {
     anchor.href = radioPaperArray[i].href; //Insert href attribute
     anchor.target = "_blank"; //Open link in new browser window
     anchor.rel = "noopener noreferrer"; //Stop the linked pages from opening new window
+    image.style.display = "flex-wrap";
     image.title = "Picture of Website Logo";//Create title if images don't load in browser
     image.src = radioPaperArray[i].imageLink;//Define image src for HTML output
     imageContainer.appendChild(image);//Embed image tags in div tag
@@ -250,7 +277,7 @@ function footercontainer() {
   var anchor = document.createElement("a");  
   footerContainer.style.backgroundColor = "navy";
   footerContainer.style.color = "white";
-  footerContainer.style.display = "block";
+  footerContainer.style.width = "100%";
   para.style.textAlign = "center";
   para.innerHTML = "This website was created by Pat Wallace as a course project and is not intended for commercial use";
   footerContainer.appendChild(para);
@@ -275,6 +302,7 @@ headercontainer();
 buttoncontainer();
 textview();
 textcontainer();
+textformcontainer();
 imagescontainer();
 formcontainer();
 footercontainer();
