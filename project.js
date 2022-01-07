@@ -166,8 +166,9 @@ function removetextcontainer() {
 //Function to create an image container for all images
 function imagescontainer() {
   imagesContainer.id = "imagesContainer";
-  imagesContainer.style.display = "flex-wrap";
-  imagesContainer.style.flexDirection = "column-wrap";
+  imagesContainer.style.display = "flex";
+  imagesContainer.style.flexWrap = "wrap";
+  imagesContainer.style.alignContent = "center";
   imagesContainer.style.justifyContent = "space-between";
   document.body.appendChild(imagesContainer);
 }
@@ -222,7 +223,7 @@ function textview() {
     imageContainer.style.borderColor = "blue";//Set border colour
     anchor.href = radioPaperArray[i].href; //Insert href attribute
     anchor.target = "_blank"; //Open link in new browser window
-    anchor.rel = "noopener noreferrer"; //Stop the linked pages from opening new window
+    anchor.rel = "noopener noreferrer"; //Stop the linked pages from opening a new window remotely
     image.style.display = "flex-wrap";
     image.title = "Picture of Website Logo";//Create title if images don't load in browser
     image.src = radioPaperArray[i].imageLink;//Define image src for HTML output
@@ -269,10 +270,7 @@ function forminput() {
 }
 
 //Function to submit data from the input form
-function submit() {
-    
-  //Create variables here from form input submissions and append variables to array to be included in output to HTML
-}
+
 
 //Function containing footer text
 function footercontainer() {
